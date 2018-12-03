@@ -1,0 +1,134 @@
+\documentclass[12pt]{report}
+\usepackage{djtex}
+\usepackage{titlesec}
+\usepackage{color}
+\usepackage{enumitem}
+
+\setcounter{secnumdepth}{3}
+
+% Remove all the excessive space from the chapter headers.
+\titleformat{\chapter}[display]   
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}   
+\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+% End chapter header fix.
+
+\newenvironment{reqlist}{
+	\renewcommand{\labelenumi}{\tab\thesubsection.\arabic{enumi}}
+	\renewcommand{\labelenumii}{\thesubsection.\arabic{enumi}.\arabic{enumii}}
+	\begin{enumerate}[itemsep = 1pt, parsep = 0pt, leftmargin = *]
+}{\end{enumerate}}
+
+% Remove chapter number from sections.
+\renewcommand*\thesection{\arabic{section}}
+
+\begin{document}
+
+% Create Header.
+\header{Capstone Requirements Specification}{}{Group 4}
+
+% Create Title Page.
+\font\titlefont = cmr12 at 50pt
+\font\subtitlefont = cmr12 at 28pt
+\title{\titlefont{Capstone Project} \\ \vspace{10pt} \subtitlefont{Software Requirements Specification}}
+\author{Roberto Acevedo Morales \\ Adrian Gonzalez \\ Dan Jones \\ Rajat Singh}
+\date{}
+\maketitle
+
+\tableofcontents \newpage
+
+\section{Introduction}
+	\subsection{Purpose: Mission Statement}
+		The goal of our team was to bring the excitement and uncertainty of distant galaxies to a browser window with a fast-paced arcade style game containing infinitely generating obstacles, enemies, and adventure.
+	\subsection{Scope}
+		The capstone project completed by Group 4, herein referred to as ``The System,'' shall consist software, audio, and graphical assets combined to provide an entertaining gaming experience harkening back to traditional arcade titles such as Galaga and Space Invaders, but with some modern twists.
+	\subsection{Definitions, Acronyms, and Abbreviations}
+		\begin{reqlist}
+			\item \textbf{Frame Rate} \\ The rate at which consecutive images called ``frames" are displayed while rendering film or computer graphics.
+			\item \textbf{Game Engine} \\ A framework for game development that provides inherent support for various common components of a game such as physics, animation, audio, and lighting.	
+			\item \textbf{Side Scroller} \\ A type of game in which a side-view camera angle is used to view a character travelling from left to right on the screen, involving movement in one continuous direction in many cases.
+		\end{reqlist}
+	\subsection{References}
+		\begin{reqlist}
+			\small{
+				\item https://en.wikipedia.org/wiki/Frame\_rate
+				\item https://unity3d.com/what-is-a-game-engine
+				\item https://www.techopedia.com/definition/27153/side-scroller
+			}
+		\end{reqlist}
+	\subsection{Overview}
+		The following document outlines the software requirements and specificatiosn for The System, including the fucntional, nonfunctional, domain, hazard, and system requirements. Requirements are organized into sections based on their applicability to more general goals such as resources used on the player's end, the features incorporated within the game, and how the game performs under appropriate conditions.
+
+\section{Overall Description}
+	\subsection{Product Perspective}
+		test
+	\subsection{Product Functions}
+		test
+	\subsection{User Characteristics}
+		test
+	\subsection{Constraints}
+		test
+	\subsection{Assumptions and Dependencies}
+		test
+
+\section{User/Stakeholder Profiles}
+\begin{center}
+	\begin{tabular}{|c|c|c|} \hline
+		\textbf{Stakeholder} & \textbf{Interests} & \textbf{Constraints} \\ \hline
+		test & test & test \\ \hline
+		test & test & test \\ \hline
+	\end{tabular}
+\end{center}
+
+\section{Core System Requirements}
+	This section lists all of the core functional requirements for the System.
+	\subsection{Storage Requirements}
+		\begin{reqlist}
+			\item The System shall maintain all persistent data within a database of JSON objects handled by the IndexedDB API.
+			\item The System shall not exceed 1MB of persistent data per browser.
+		\end{reqlist}
+	\subsection{Networking Requirements}
+		\begin{reqlist}
+			\item The System shall be hosted in a web-based environment.
+			\item The System shall limit all network interactions to the use of an in-game leaderboard.
+			\item The System shall notify the user of any inability to fetch or submit scores to the leaderboard.
+			\item The System shall only attempt network interactions upon the user's request.
+		\end{reqlist}
+		
+\section{Feature Requirements}
+	This section lists all of the features to be implemented in the System.
+	\subsection{General Features}
+		\begin{reqlist}
+			\item The System shall...
+		\end{reqlist}
+
+\section{Performance Requirements}
+	This sections lists all performance requirements laid out for the System.
+	\subsection{Frame Rate Requirements}
+	\begin{reqlist}
+		\item The System shall at no time include spikes in frame rate that dip below 15 FPS.
+		\item The System shall limit the number of average performance spikes to a maximum of 1 spike per second.
+	\end{reqlist}
+
+\section{Nonfunctional Requirements}
+	This section lists the nonfunctional requirements pertaining to the System. 
+	\subsection{Software-Related}
+		\begin{reqlist}
+			\item The System shall be designed using the Unity Game Engine.
+			\item The System shall be exported to the WebGL platform using Unity's included build options.
+		\end{reqlist}
+	\subsection{Graphics \& Visuals}
+		\begin{reqlist}
+			\item The System shall use a native resolution of 1400x700 pixels.
+			\item The System shall offer fullscreen support for a resolution of 1920x1080 pixels.
+			\begin{reqlist}
+				\item Any 16:9 aspect ratio display should also be supported as a result, at the possible expense of some minor graphical defects such as blurring at larger resolutions.
+			\end{reqlist}
+			\item The System shall only use the .png format for images.
+			\item The System shall only use the .fbx format for 3D models.
+		\end{reqlist}
+	\subsection{Regulatory}
+		\begin{reqlist}
+			\item The System shall...
+		\end{reqlist}
+
+\end{document}

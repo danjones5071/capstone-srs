@@ -1,0 +1,164 @@
+\ProvidesPackage{djtex}
+\RequirePackage{fancyhdr}				% Allow the creation of formatted headers.
+\RequirePackage[english]{babel}		% Support for English features like quotation marks.
+\RequirePackage{amsmath}				% Import mathematics.
+\RequirePackage{amssymb}				% Import mathematical symbols
+\RequirePackage{graphicx}				% Import graphics features.
+\RequirePackage{multicol}
+\RequirePackage[top = 1in, bottom = 1in, left = .5in, right = .5in]{geometry}
+
+
+
+
+
+%********** GENERAL FORMATTING **************************
+%********************************************************
+\def \tab{\ \ \ \ \ }	% Use 5 blank spaces for a tab.
+
+% Change bulleting styles for itemized lists.
+\renewcommand{\labelitemii}{\ensuremath{\circ}}
+\renewcommand{\labelitemiii}{\tiny{\ensuremath{\blacksquare}}}
+\renewcommand{\labelitemiv}{\tiny{\ensuremath{\square}}}
+
+\newcommand{\header}[3]
+{
+	\pagestyle{fancy}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\fancyhead[L]{#1}
+	\fancyhead[C]{#2}
+	\fancyhead[R]{#3}
+}
+
+
+
+
+
+
+%********** STUDY GUIDE *********************************
+%********************************************************
+\def \ex{\textbf{(ex) }}
+\def \soln{\textbf{\underline{Solution}}:}
+
+% Define the DEFN command to make definitions bold and italic.
+\newcommand{\defn}[1]
+{
+	\!\textbf{#1}\!
+}
+
+% Define the RECAP command to put a box around a recap section.
+\newcommand{\recap}[1]
+{
+	\vspace{12pt}
+	\noindent\fbox
+	{
+		\parbox{\dimexpr\linewidth-2\fboxsep-\fboxrule\relax}
+		{
+			\center{ $\bigstar$  \ \underline{\textsc{\large{Recap}}} \  $\bigstar$}
+			\begin{itemize}
+				#1
+			\end{itemize}
+		}
+	
+	}
+	\vspace{12pt}
+}
+
+
+
+
+
+%********** GENERAL MATH ********************************
+%********************************************************
+\def \R{\ensuremath{\mathbb{R}}}
+\def \C{\ensuremath{\mathbb{C}}}
+\def \Q{\ensuremath{\mathbb{Q}}}
+\def \Z{\ensuremath{\mathbb{Z}}}
+
+
+
+
+%********** PROGRAMMING *********************************
+%********************************************************
+\def \xor{\ensuremath{\oplus}}
+
+% Define the CODE command for in-line code segments.
+\newcommand{\code}[1]
+{
+	\!\texttt{#1}\!
+}
+
+% Define the CODEBLOCK command to draw boxes around code.
+\newcommand{\codeblock}[1]
+{
+	\noindent\fbox
+	{
+		\parbox{\dimexpr\linewidth-2\fboxsep-\fboxrule\relax}
+		{
+			
+			\flushleft{\texttt{#1}}
+			
+		}
+	
+	}
+}
+
+
+
+
+
+%********** PROBABILITY *********************************
+%********************************************************
+
+\newcommand{\smatrix}[2]
+{
+	\ensuremath
+	{
+		\left( \ 
+		\begin{matrix}
+		#1 \\
+		#2
+		\end{matrix}
+		\ \right)
+	}
+}
+
+% Define the COMB command to display the equation for a combination.
+\newcommand{\comb}[2]
+{
+	\ensuremath
+	{
+		C_{#1, #2} = 
+		\left( \ 
+		\begin{matrix}
+		#2 \\
+		#1
+		\end{matrix}
+		\ \right)
+		= \frac{#2 !}{#1 !(#2 - #1)!}
+	}
+}
+
+\newcommand{\ccomb}[2]
+{
+	\ensuremath
+	{
+		\frac{#2 !}{#1 !(#2 - #1)!}
+	}
+}
+
+% Define the PERM command to display the equation for a permutation.
+\newcommand{\perm}[2]
+{
+	\ensuremath
+	{
+		P_{#1, #2} = \frac{#2 !}{(#2 - #1)!}
+	}
+}
+
+
+
+
+
+%********** CALCULUS ************************************
+%********************************************************
+\def \ddx{\ensuremath{\frac{d}{dx}}}
