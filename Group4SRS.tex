@@ -3,6 +3,7 @@
 \usepackage{titlesec}
 \usepackage{color}
 \usepackage{enumitem}
+\usepackage{caption}
 
 \setcounter{secnumdepth}{3}
 
@@ -25,6 +26,8 @@
 
 % Create Header.
 \header{Capstone Requirements Specification}{}{Group 4}
+
+\captionsetup[figure]{font=scriptsize, labelfont={bf},skip=0pt}
 
 % Create Title Page.
 \font\titlefont = cmr12 at 50pt
@@ -85,6 +88,48 @@
 		The functions of The System are divided into two major categories: gameplay and navigation. The gameplay category can be further subdivided into three additional subcategories: movement, offense, and collection. The movement subcategory involves using the directional keys to navigate through the randomly generated terrain. Movement can be used for defensive purposes to avoid obstacles or to position the player for an attack. The offense subcategory involves using the mouse to rotate the player and firing at obstacles or enemies. This can be done for the purpose of eliminating threats from enemies, or clearing up the terrain for safer movement. The collection subcategory involves the user strategically selecting randomly generated pickups to collect in order to recover health and energy, as well as add to their in-game currency.
 \\ \\
 The navigation category includes any interactions the user carries out with the various features present in the UI included with the game. Such interactions mainly take place outside of the gameplay -- before the user has begun playing or after the player has died. Once The System is launched, the user is greeted with a main menu which provides them with control over when the gameplay begins. This main menu contains a settings page which allows the user to adjust their volume settings or delete their progress and other saved data. Upon exhausting all the player's lives during gameplay, a ``game over" screen is displayed to the user. This provides them with four options: return to the main menu, begin another round of gameplay, visit the in-game store, or view the leaderboard. Inside the store, the user can trade their in-game currency for additional weapons and upgrades which improve the player's mechanics to facilitate their survival during gameplay. The leaderboard option directs the user to a UI panel prompting them to submit their name and score. Whether the user decides to submit their name or not, they are then shown a new UI panel with the names and scores of the top-10 highest scores submitted.
+	\subsubsection{Use Cases}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.5]{images/Move.png}
+		\caption{Move Player (UC-1)}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.5]{images/FireWeapon.png}
+		\caption{Fire Weapon (UC-2)}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.5]{images/CollectPickup.png}
+		\caption{Collect Pickup (UC-3)}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.5]{images/BeginRound.png}
+		\caption{Begin Round (UC-4)}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.5]{images/ChangeSettings.png}
+		\caption{Change Settings (UC-5)}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.5]{images/ReturnToHome.png}
+		\caption{Return to Main Menu (UC-6)}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.5]{images/PurchaseWeapon.png}
+		\caption{Purchase Weapon (UC-7)}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.5]{images/SubmitScore.png}
+		\caption{Submit Score to Leaderboard (UC-8)}
+	\end{figure}
+	\newpage
 	\subsection{User Characteristics}
 		Due to the nature of video games, there is a broad and diverse pool of potential users of The System. There is no reason to exclude individuals as potential users based on any age constraints ranging from children to the elderly. As such, no special knowledge or skills should be assumed for any user with the exception of the basic use of a computer, graphical user interfaces, and web browsers.
 	\subsection{Constraints}
