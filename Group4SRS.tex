@@ -210,7 +210,7 @@ The navigation category includes any interactions the user carries out with the 
 				\item The amount of in-game currency collected shall be persistent between multiple sessions.
 				\item The amount of in-game currency shall be erased upon the user pressing the ``delete data" button in the settings menu.
 			\end{reqlist}
-			\item The System shall include an in-game store allowing the user to purchase weapons and upgrades.
+			\item The System shall include an in-game store allowing the user to purchase weapons and upgrades with in-game currency.
 			\begin{reqlist}
 				\item The store shall be accessible to the user after each round of gameplay.
 				\item The store shall allow the user to make purchases by clicking a UI button.
@@ -260,9 +260,25 @@ The navigation category includes any interactions the user carries out with the 
 			\end{reqlist}
 			\item The System shall generate obstacles which damage the player upon impact.
 			\begin{reqlist}
-				\item 
+				\item The asteroid obstacle shall spawn at a random y-position offscreen.
+				\item The asteroid obstacle shall travel at a fixed speed to the left side of the screen.
+				\item The asteroid obstacle shall damage the player and enemies when it collides with them.
+				\item The blackhole obstacle shall spawn at a random y-position offscreen.
+				\item The blackhole obstacle shall travel at a fixed speed to the left side of the screen.
+				\item The blackhole obstacle shall damage and destroy all other objects that collide with it.
 			\end{reqlist}
 			\item The System shall generate enemies which target the player to deal intentional damage.
+			\begin{reqlist}
+				\item The System shall generate two types of enemies designated "Type A Enemies" and "Type B Enemies"
+				\item The system shalll spawn enemies at random locations off screen.
+				\item Type B Enemies shall approach the Player from a distance until a suitable firing distance is achieved.
+				\item Type B Enemies shall stay at a fixed position as long as they are within firing distance and shoot at the Player.
+				\item Type B Enemies shall rotate to maintain a bearing on the Player.
+				\item Type A Enemies shall approach the player from a distance until a suitable firing distance is achieved.
+				\item Type A Enemies shall contrinue too follow the Player.
+				\item Type A Enemies shall rotate to maintain a bearing on the player.
+				\item Type A Enemies shall attempt to dodge the incoming laser fire from the player.
+			\end{reqlist}
 			\item The System shall generate pickups to aid the player in their survival.
 			\begin{reqlist}
 				\item Pickups shall be collected when the player collides with them in-game.
@@ -275,8 +291,11 @@ The navigation category includes any interactions the user carries out with the 
 			\item The System shall increase the difficulty of gameplay as the amount of time spent in a round progresses.
 			\begin{reqlist}
 				\item The progression of difficulty shall be managed by the Phase Manager module.
-				\item 
+				\item The Phase Manager shall keep acount of a set of phase multipliers for each enemy type and obstacle type.
+				\item The Phase Manager shall increase these phase multipliers over time.
+				\item The number of enemies generated shall increase as the phase multiplier value for each associated enemy increases.
 				\item The time between each asteroid generation shall decrease by 20\% of the current asteroid phase multiplier value of the PhaseManager each asteroid phase with a floor of an asteroid generating every second.
+				\item The time between each blackhole generation shall decrease by 20\% of the current asteroid phase multiplier value of the PhaseManager each blackhole phase with a floor of an asteroid generating every second.
 			\end{reqlist}
 			\item The System shall generate random events which introduce additional challenges to the player.
 			\begin{reqlist}
@@ -328,6 +347,7 @@ The navigation category includes any interactions the user carries out with the 
 			\item No audio files used for music shall exceed 9MB in size.
 			\item No audio files used for sound effects shall exceed 4 seconds in length.
 			\item No audio files used for sound effects shall exceed 1.5MB in size.
+			\item Audio files shall be compressed during gameplay to minimize loadtimes.
 		\end{reqlist}
 
 \end{document}
