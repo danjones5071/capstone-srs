@@ -232,6 +232,10 @@ The navigation category includes any interactions the user carries out with the 
 				\item The leaderboard shall accept multiple scores from users submitting an existing name, keeping the highest score.
 				\item The leaderboard shall not require the user to submit their score in order to view the top scores.
 			\end{reqlist}
+			\item The System shall dispaly a ``Game Over" screen upon the player exhausting all their lives.
+			\begin{reqlist}
+				\item The Game Over screen shall allow the player to return to the main menu, access the store, and submit their score to the leaderboard.
+			\end{reqlist}
 		\end{reqlist}
 	\subsection{Gameplay Features}
 		\begin{reqlist}
@@ -291,11 +295,10 @@ The navigation category includes any interactions the user carries out with the 
 			\item The System shall increase the difficulty of gameplay as the amount of time spent in a round progresses.
 			\begin{reqlist}
 				\item The progression of difficulty shall be managed by the Phase Manager module.
-				\item The Phase Manager shall keep acount of a set of phase multipliers for each enemy type and obstacle type.
-				\item The Phase Manager shall increase these phase multipliers over time.
+				\item The Phase Manager shall keep account of a set of phase multipliers for each enemy type and obstacle type.
+				\item The Phase Manager shall increase these phase multipliers over time, switching between phases in 5 second intervals.
 				\item The number of enemies generated shall increase as the phase multiplier value for each associated enemy increases.
 				\item The time between each asteroid generation shall decrease by 20\% of the current asteroid phase multiplier value of the PhaseManager each asteroid phase with a floor of an asteroid generating every second.
-				\item The time between each blackhole generation shall decrease by 20\% of the current asteroid phase multiplier value of the PhaseManager each blackhole phase with a floor of an asteroid generating every second.
 			\end{reqlist}
 			\item The System shall generate random events which introduce additional challenges to the player.
 			\begin{reqlist}
@@ -318,6 +321,7 @@ The navigation category includes any interactions the user carries out with the 
 	\begin{reqlist}
 		\item The System shall at no time include spikes in frame rate that dip below 15 FPS.
 		\item The System shall limit the number of average performance spikes to a maximum of 1 spike per second.
+		\item The System shall limit the number of simultaneous Update() methods executing instructions every frame to a maximum of 10.
 	\end{reqlist}
 
 \section{Nonfunctional Requirements}
@@ -350,4 +354,12 @@ The navigation category includes any interactions the user carries out with the 
 			\item Audio files shall be compressed during gameplay to minimize loadtimes.
 		\end{reqlist}
 
+\newpage
+\section{Requirements Traceability Matrix}
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[scale=0.35]{images/Matrix.png}
+		\caption{A requirements traceability matrix for the major use cases of The System.}
+	\end{figure}
+\listoffigures
 \end{document}
